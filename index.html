@@ -41,9 +41,9 @@
                           /* Nova variável para o fundo do combo de agenda */
                          'agenda-combo-bg': '#D4C1B0', /* Usando o Bege Claro da paleta */
 
-                         /* Nova cor laranja para o botão de envio (mais escura) */
-                         'send-button-orange': '#A84C32', /* Tom mais escuro de laranja */
-                         'send-button-orange-darker': '#8a3e28', /* Mais escuro ainda para hover */
+                         /* Nova cor laranja para o botão de envio (MAIS ESCURA AGORA) */
+                         'send-button-orange': '#94412c', /* Tom mais escuro de laranja (ajustado) */
+                         'send-button-orange-darker': '#7a3523', /* Mais escuro ainda para hover (ajustado) */
 
                          /* Nova cor cinza para o ícone do WhatsApp nos combos */
                          'whatsapp-combo-gray': '#777777', /* Um cinza médio */
@@ -52,6 +52,10 @@
                          /* Nova cor cinza para o fundo dos combos de resposta (mais claro) */
                          'answer-combo-gray': '#f2f2f2', /* Cinza mais claro */
                          'answer-combo-gray-border': '#e0e0e0', /* Borda um pouco mais escura */
+
+                         /* Cor sólida marrom para o botão de envio do formulário de agendamento (mantido para referência, mas não usado no botão Enviar) */
+                         'ral-8008-olive-brown': '#6B4620', /* Cor RAL 8008 Olive Brown */
+                         'ral-8008-olive-brown-darker': '#52371a', /* Tom mais escuro para hover */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'], // Fonte principal Inter
@@ -105,9 +109,9 @@
               /* Nova variável para o fundo do combo de agenda */
              --agenda-combo-bg: #D4C1B0; /* Usando o Bege Claro da paleta */
 
-             /* Nova cor laranja para o botão de envio (mais escura) */
-             --send-button-orange: #A84C32; /* Tom mais escuro de laranja */
-             --send-button-orange-darker: #8a3e28; /* Mais escuro ainda para hover */
+             /* Nova cor laranja para o botão de envio (MAIS ESCURA AGORA) */
+             --send-button-orange: #94412c; /* Tom mais escuro de laranja (ajustado) */
+             --send-button-orange-darker: #7a3523; /* Mais escuro ainda para hover (ajustado) */
 
              /* Nova cor cinza para o ícone do WhatsApp nos combos */
              --whatsapp-combo-gray: #777777; /* Um cinza médio */
@@ -124,6 +128,10 @@
              /* Gradiente para o botão de agendamento (AGORA MAIS ESCURO) */
              --gradient-marcar-agenda: linear-gradient(to right, #6b4620, #8a5c2a); /* Tons mais escuros para o Medium Brown */
              --gradient-marcar-agenda-hover: linear-gradient(to right, #52371a, #6b4620); /* Tons ainda mais escuros para hover */
+
+              /* Cor sólida marrom para o botão de envio do formulário de agendamento (mantido para referência, mas não usado no botão Enviar) */
+             --ral-8008-olive-brown: #6B4620; /* Cor RAL 8008 Olive Brown */
+             --ral-8008-olive-brown-darker: #52371a; /* Tom mais escuro para hover */
 
          }
 
@@ -628,9 +636,9 @@
             box-sizing: border-box; /* Inclui padding na largura */
         }
 
+        /* Estilo para o botão de envio do formulário de agendamento (AGORA COR SÓLIDA LARANJA MAIS ESCURA) */
         .agenda-form button[type="submit"] {
-            /* Alterado para a nova cor laranja mais escura */
-            background-color: var(--send-button-orange); /* Botão Enviar Laranja Escuro */
+            background-color: var(--send-button-orange); /* Cor sólida laranja mais escura */
             color: white;
             padding: 10px 15px;
             border-radius: 8px;
@@ -643,8 +651,7 @@
         }
 
         .agenda-form button[type="submit"]:hover {
-             /* Alterado para a nova cor laranja mais escura no hover */
-             background-color: var(--send-button-orange-darker); /* Laranja mais escura no hover */
+             background-color: var(--send-button-orange-darker); /* Tom mais escuro para hover */
         }
 
 
