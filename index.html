@@ -11,18 +11,47 @@
             theme: {
                 extend: {
                     colors: {
-                        // Nova Paleta de cores: #D0CFB8, #95B4AA, #678863, #C8DDD1
-                        'patricia-sandstone': '#D0CFB8', // Sandstone (para fundo principal e elementos claros)
-                        'patricia-vintage-seagrass': '#95B4AA', // Vintage Seagrass (para botões de ação e elementos de destaque)
-                        'patricia-smoky-khaki': '#678863', // Smoky Khaki (para textos e elementos sóbrios)
-                        'patricia-soft-jade': '#C8DDD1', // Soft Jade (para fundos de chat e elementos secundários) - Mantido, pois é mais cinza/claro
-                        'patricia-text': '#444', // Cor de texto principal (um cinza escuro para legibilidade)
-                        'patricia-heading': '#000', // Cor para títulos principais (PRETO)
-                        'patricia-subheading': '#444', // Cor para subtítulos/descrições (MAIS ESCURA)
-                        // Cores para ícones flutuantes (Instagram mantido, WhatsApp de volta para verde)
-                         'whatsapp-float': '#25D366', // Verde para WhatsApp flutuante
-                         'instagram-float': '#A66C8F', // Tom de rosa/roxo para Instagram (mantido)
-                         'email-float': '#777', // Cor para ícone de Email flutuante (cinza)
+                        // Nova Paleta de cores da imagem (Versão 2)
+                        'palette2-light-bg': '#F0F0F0', // Fundo Claro
+                        'palette2-light-brown': '#D4C1B0', // Bege Claro
+                        'palette2-medium-brown': '#C58940', // Marrom/Laranja Médio
+                        'palette2-light-green': '#8B9C7E', // Verde Claro (Mantido para referência, mas não usado no combo de resposta)
+                        'palette2-dark-green': '#4A5D42', // Verde Escuro
+                        'palette2-black': '#000000', // Preto
+
+                        // Cores para ícones flutuantes (mantidas ou ajustadas se necessário)
+                         'whatsapp-float': '#25D366', // Mantido o verde WhatsApp padrão para reconhecimento
+                         'instagram-float': '#A66C8F', // Mantido o tom de rosa/roxo
+                         'email-float': '#777', // Mantido o cinza
+
+                         // Cores para botões específicos (ajustadas para a nova paleta)
+                         'whatsapp-button-color': '#25D366', // Mantido o verde WhatsApp
+                         'whatsapp-button-darker': '#128751', // Mantido o verde WhatsApp mais escuro
+                         'instagram-button-color': '#A66C8F', // Mantido a cor Instagram
+                         'writer-button-color': '#C58940', // Usando Marrom/Laranja Médio para botão Escritora (OBS: Será alterado para verde no CSS)
+                         'writer-button-darker': '#a47035', // Marrom/Laranja Médio mais escuro (OBS: Será alterado para verde no CSS)
+
+                         // Novas variáveis para o botão do livro (tons de verde)
+                         'book-button-green': '#4A5D42', /* Usando o Dark Green da paleta */
+                         'book-button-green-darker': '#3c4d36', /* Um pouco mais escuro para hover */
+
+                         /* Nova variável para o fundo cinza claro do combo do livro */
+                         'combo-light-gray': '#e0e0e0', /* Um cinza claro para o fundo do combo */
+
+                          /* Nova variável para o fundo do combo de agenda */
+                         'agenda-combo-bg': '#D4C1B0', /* Usando o Bege Claro da paleta */
+
+                         /* Nova cor laranja para o botão de envio (mais escura) */
+                         'send-button-orange': '#A84C32', /* Tom mais escuro de laranja */
+                         'send-button-orange-darker': '#8a3e28', /* Mais escuro ainda para hover */
+
+                         /* Nova cor cinza para o ícone do WhatsApp nos combos */
+                         'whatsapp-combo-gray': '#777777', /* Um cinza médio */
+                         'whatsapp-combo-gray-darker': '#555555', /* Um cinza mais escuro para hover */
+
+                         /* Nova cor cinza para o fundo dos combos de resposta (mais claro) */
+                         'answer-combo-gray': '#f2f2f2', /* Cinza mais claro */
+                         'answer-combo-gray-border': '#e0e0e0', /* Borda um pouco mais escura */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'], // Fonte principal Inter
@@ -38,9 +67,10 @@
         /* Estilos personalizados adicionais */
         body {
             font-family: 'Inter', sans-serif; /* Aplica a fonte principal */
-            color: var(--patricia-text); /* Cor de texto padrão */
+            color: var(--palette2-dark-green); /* Cor de texto padrão - usando o verde escuro */
             line-height: 1.6;
-            background: linear-gradient(to bottom right, var(--patricia-sandstone), #c0bfa8); /* Gradiente suave no fundo com nova cor */
+            /* Usando Light Green para o fundo do body, com um gradiente sutil */
+            background: linear-gradient(to bottom right, var(--palette2-light-green), #7a8a70);
             display: flex;
             flex-direction: column; /* Para alinhar o rodapé ao final */
             justify-content: flex-start; /* Alinhar ao topo */
@@ -52,19 +82,54 @@
 
         /* Usando variáveis CSS para as novas cores */
          :root {
-            --patricia-sandstone: #D0CFB8;
-            --patricia-vintage-seagrass: #95B4AA;
-            --patricia-smoky-khaki: #678863;
-            --patricia-soft-jade: #C8DDD1;
-            --patricia-text: #444; /* Cor de texto mais escura */
-            /* Variáveis para os tons de verde do WhatsApp (revertido) */
+            --palette2-light-bg: #F0F0F0;
+            --palette2-light-brown: #D4C1B0;
+            --palette2-medium-brown: #C58940;
+            --palette2-light-green: #8B9C7E; /* Mantido para o gradiente do body */
+            --palette2-dark-green: #4A5D42;
+            --palette2-black: #000000;
+
+            /* Variáveis para os tons de verde do WhatsApp e outros botões */
             --whatsapp-green: #25D366; /* Verde padrão do WhatsApp */
             --whatsapp-green-darker: #128751; /* Verde mais escuro para hover */
+            --instagram-color: #A66C8F; /* Cor Instagram (mantida) */
+             --email-float-color: #777; /* Cor cinza para Email flutuante */
+
+             /* Variáveis para o botão do livro (tons de verde) */
+             --book-button-green: #4A5D42; /* Usando o Dark Green da paleta */
+             --book-button-green-darker: #3c4d36; /* Um pouco mais escuro para hover */
+
+             /* Nova variável para o fundo cinza claro do combo do livro */
+             --combo-light-gray: #e0e0e0; /* Um cinza claro para o fundo do combo */
+
+              /* Nova variável para o fundo do combo de agenda */
+             --agenda-combo-bg: #D4C1B0; /* Usando o Bege Claro da paleta */
+
+             /* Nova cor laranja para o botão de envio (mais escura) */
+             --send-button-orange: #A84C32; /* Tom mais escuro de laranja */
+             --send-button-orange-darker: #8a3e28; /* Mais escuro ainda para hover */
+
+             /* Nova cor cinza para o ícone do WhatsApp nos combos */
+             --whatsapp-combo-gray: #777777; /* Um cinza médio */
+             --whatsapp-combo-gray-darker: #555555; /* Um cinza mais escuro para hover */
+
+             /* Nova cor cinza para o fundo dos combos de resposta (mais claro) */
+             --answer-combo-gray: #f2f2f2; /* Cinza mais claro */
+             --answer-combo-gray-border: #e0e0e0; /* Borda um pouco mais escura */
+
+             /* Gradientes para os botões principais (TODOS VERDES) */
+             --gradient-green-base: linear-gradient(to right, var(--palette2-dark-green), var(--palette2-light-green)); /* Dark Green para Light Green */
+             --gradient-green-hover: linear-gradient(to right, #3c4d36, #7a8a70); /* Tons mais escuros para hover */
+
+             /* Gradiente para o botão de agendamento (AGORA MAIS ESCURO) */
+             --gradient-marcar-agenda: linear-gradient(to right, #6b4620, #8a5c2a); /* Tons mais escuros para o Medium Brown */
+             --gradient-marcar-agenda-hover: linear-gradient(to right, #52371a, #6b4620); /* Tons ainda mais escuros para hover */
+
          }
 
 
         .linktree-container {
-            background-color: #ffffff; /* Fundo branco para o container */
+            background-color: var(--palette2-light-bg); /* Fundo claro para o container */
             padding: 40px; /* Padding aumentado */
             border-radius: 20px; /* Bordas mais arredondadas */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente */
@@ -84,7 +149,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 25px; /* Espaço maior abaixo da foto */
-            border: 5px solid var(--patricia-vintage-seagrass); /* Borda com nova cor */
+            border: 5px solid var(--palette2-medium-brown); /* Borda com Marrom/Laranja Médio */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -92,48 +157,32 @@
             font-family: 'Lora', serif;
             font-size: 3.2rem; /* Tamanho do título AUMENTADO */
             font-weight: 700;
-            color: #000; /* Cor do título PRETO */
+            color: var(--palette2-dark-green); /* Cor do título Verde Escuro */
             margin-bottom: 8px; /* Espaço ajustado */
         }
 
         .description {
             font-size: 1.1rem; /* Tamanho da descrição aumentado */
-            color: var(--patricia-text); /* Cor da descrição MAIS ESCURA (usando a variável de texto principal) */
+            color: var(--palette2-dark-green); /* Cor da descrição Verde Escuro */
             margin-bottom: 20px; /* Espaço ajustado para a bio vir abaixo */
             line-height: 1.6;
         }
 
-        /* Estilo para a seção de Bio */
-        .bio-section {
-            text-align: left; /* Alinhar texto da bio à esquerda */
-            margin-bottom: 35px; /* Espaço maior abaixo da bio */
-            color: var(--patricia-text);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Estilo para botões de opção (usando novas cores com gradientes) */
+        /* Estilo base para botões de opção */
         .btn-option {
             display: flex; /* Usar flexbox para ícone e texto */
             align-items: center;
             justify-content: center; /* Centralizar conteúdo */
-            background: linear-gradient(to right, var(--patricia-vintage-seagrass), #85a59b); /* Gradiente com nova cor */
             color: white;
             font-weight: 600;
             padding: 18px 25px; /* Padding aumentado para botões */
             border-radius: 12px; /* Bordas mais arredondadas nos botões */
             text-decoration: none;
             margin-bottom: 18px; /* Espaço maior entre botões */
-            transition: all 0.3s ease; /* Transição suave */
+            transition: all 0.3s ease; /* Transição suave para várias propriedades */
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Sombra nos botões */
             border: none;
             width: 100%; /* Define a largura total */
-        }
-
-        .btn-option:hover {
-            background: linear-gradient(to right, #85a59b, #76968c); /* Gradiente mais escuro no hover */
-            transform: translateY(-3px); /* Efeito de "levantar" no hover */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
         }
 
          .btn-option i {
@@ -141,20 +190,54 @@
              font-size: 1.3rem; /* Tamanho do ícone ajustado */
          }
 
-        /* Estilo específico para o botão de Escritora (usando Smoky Khaki) */
-        .btn-option.writer-button {
-             background: linear-gradient(to right, var(--patricia-smoky-khaki), #5a7a55); /* Gradiente com nova cor */
+        /* Estilos com Gradiente Verde para TODOS os botões principais */
+        .btn-option.quem-sou,
+        .btn-option.terapia,
+        .btn-option.hipnoterapia,
+        .btn-option.porte-armas,
+        .btn-option.saude-mental,
+        .btn-option.espiritualidade {
+             background: var(--gradient-green-base);
         }
-         .btn-option.writer-button:hover {
-             background: linear-gradient(to right, #5a7a5ki, #4d6c4a); /* Gradiente mais escuro */
+        .btn-option.quem-sou:hover,
+        .btn-option.terapia:hover,
+        .btn-option.hipnoterapia:hover,
+        .btn-option.porte-armas:hover,
+        .btn-option.saude-mental:hover,
+        .btn-option.espiritualidade:hover {
+             background: var(--gradient-green-hover);
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Estilo específico para o botão de Agendar (AGORA MAIS ESCURO) */
+         .btn-option.marcar-agenda {
+             background: var(--gradient-marcar-agenda);
+         }
+         .btn-option.marcar-agenda:hover {
+             background: var(--gradient-marcar-agenda-hover);
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
          }
 
-         /* Estilo específico para o botão de WhatsApp (VERDE NOVAMENTE) */
+        /* Estilo específico para o botão de Escritora (AGORA VERDE) */
+        .btn-option.writer-button {
+             background: linear-gradient(to right, var(--book-button-green), var(--book-button-green-darker)); /* Gradiente com tons de verde */
+        }
+         .btn-option.writer-button:hover {
+             background: linear-gradient(to right, var(--book-button-green-darker), #303e2b); /* Gradiente mais escuro */
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+         }
+
+         /* Estilo específico para o botão de WhatsApp (VERDE) */
         .btn-option.whatsapp-button {
              background: linear-gradient(to right, var(--whatsapp-green), var(--whatsapp-green-darker)); /* Gradiente Verde para WhatsApp */
         }
          .btn-option.whatsapp-button:hover {
              background: linear-gradient(to right, var(--whatsapp-green-darker), #0e6b40); /* Gradiente Verde mais escuro */
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
          }
 
          /* Estilo específico para o botão de Instagram (mantido) */
@@ -164,12 +247,14 @@
          }
          .btn-option.instagram-button:hover {
               background: radial-gradient(circle at 30% 107%, #fce38a 0%, #fce38a 5%, #fc4a3a 45%, #c51a8d 60%, #234cc7 90%); /* Mantido */
+              transform: translateY(-3px);
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
          }
 
 
         /* Estilos para a seção Escritora */
         .writer-section {
-            background-color: #ffffff; /* Fundo branco */
+            background-color: var(--palette2-light-bg); /* Fundo claro */
             padding: 30px; /* Padding ajustado */
             border-radius: 15px; /* Bordas arredondadas */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -181,11 +266,11 @@
             font-family: 'Lora', serif;
             font-size: 1.8rem;
             margin-bottom: 15px;
-            color: var(--patricia-smoky-khaki); /* Nova cor */
+            color: var(--palette2-black); /* Cor do título PRETO */
         }
         .writer-section p {
             font-size: 1rem;
-            color: var(--patricia-text);
+            color: var(--palette2-black); /* Cor do texto PRETO */
             margin-bottom: 20px;
             line-height: 1.6;
             max-width: 600px;
@@ -207,12 +292,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 85px; /* Tamanho do círculo AUMENTADO */
-            height: 85px; /* Tamanho do círculo AUMENTADO */
+            width: 40px; /* Tamanho do círculo REDUZIDO AINDA MAIS */
+            height: 40px; /* Tamanho do círculo REDUZIDO AINDA MAIS */
             border-radius: 50%; /* Forma de círculo */
             color: white;
-            font-size: 4rem; /* Tamanho do ícone AUMENTADO */
-            margin-bottom: 22px; /* Espaço entre os ícones AUMENTADO */
+            font-size: 1.6rem; /* Tamanho do ícone REDUZIDO AINDA MAIS */
+            margin-bottom: 5px; /* Espaço entre os ícones REDUZIDO AINDA MAIS */
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -229,20 +314,20 @@
              color: white; /* Cor do ícone branca */
         }
         .email-float-linktree {
-            background-color: var(--email-float); /* Cor cinza para Email flutuante */
+            background-color: var(--email-float-color); /* Cor cinza para Email flutuante */
             color: white; /* Cor do ícone branca */
         }
 
 
         /* Estilos para o Chat por Tópico Expansível */
         .topic-chat-container {
-            background-color: #f9f9f9; /* Fundo leve para o chat, similar à imagem */
+            background-color: var(--palette2-light-brown); /* Fundo do chat (Beige Claro) */
             border: 1px solid #e0e0e0; /* Borda sutil */
             border-radius: 10px;
             padding: 15px;
             margin-top: 15px;
             text-align: left;
-            color: var(--patricia-text);
+            color: var(--palette2-dark-green); /* Texto do chat (Dark Green) */
             font-size: 0.95rem;
             line-height: 1.5;
             display: none; /* Inicialmente escondido */
@@ -257,7 +342,7 @@
 
         .topic-chat-container .chat-header {
             font-weight: 700;
-            color: var(--patricia-smoky-khaki); /* Cor do cabeçalho do chat */
+            color: var(--palette2-dark-green); /* Cor do cabeçalho do chat (Dark Green) */
             margin-bottom: 10px;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
@@ -269,7 +354,7 @@
         .topic-chat-container .chat-close-btn {
             background: none;
             border: none;
-            color: var(--patricia-smoky-khaki); /* Cor do botão fechar */
+            color: var(--palette2-dark-green); /* Cor do botão fechar (Dark Green) */
             font-size: 1.2rem;
             cursor: pointer;
         }
@@ -282,32 +367,35 @@
              display: flex; /* Para alinhar mensagens */
              flex-direction: column;
              overflow-y: auto; /* Manter scroll para a lista de perguntas */
-             max-height: 200px; /* Manter altura máxima para a lista de perguntas */
+             max-height: 220px; /* Manter altura máxima para a lista de perguntas */
+             padding-right: 5px; /* Adicionado padding para compensar a barra de scroll */
         }
 
-         /* Estilo específico para o corpo do chat quando o combo de resposta está ativo */
-         .topic-chat-container .chat-body.combo-active {
-             overflow-y: visible; /* Remover scroll quando o combo está ativo */
-             max-height: none; /* Remover altura máxima quando o combo está ativo */
+         /* Estilo específico para o corpo do chat quando o combo de resposta está ativo ou é o formulário de agenda */
+         .topic-chat-container .chat-body.combo-active,
+         .topic-chat-container .chat-body.agenda-form-active {
+             overflow-y: visible; /* Remover scroll */
+             max-height: none; /* Remover altura máxima */
+             padding-right: 0; /* Remover padding quando não há scroll */
          }
 
 
         .topic-chat-container .message {
-            margin-bottom: 10px;
-            padding: 8px;
+            margin-bottom: 15px;
+            padding: 10px;
             border-radius: 8px;
-            max-width: 90%;
-             align-self: flex-start; /* Padrão para mensagens */
+            max-width: 85%;
         }
 
         .topic-chat-container .message.bot {
-            background-color: var(--patricia-sandstone); /* Nova cor para mensagens do bot */
-            color: var(--patricia-text);
+            align-self: flex-start;
+            background-color: var(--palette2-light-bg); /* Cor para mensagens do bot (Fundo Claro) */
+            color: var(--palette2-dark-green); /* Texto do bot (Dark Green) */
         }
 
         .topic-chat-container .message.user {
             align-self: flex-end; /* Alinha mensagens do usuário para a direita */
-            background-color: var(--patricia-vintage-seagrass); /* Nova cor para mensagens do usuário */
+            background-color: var(--palette2-medium-brown); /* Cor para mensagens do usuário (Marrom/Laranja Médio) */
             color: white;
         }
 
@@ -327,8 +415,8 @@
 
 
         .topic-chat-container .option-button-small {
-            background-color: #e0e0e0; /* Fundo cinza claro para os botões de pergunta, similar à imagem */
-            color: var(--patricia-text); /* Cor do texto dos botões de pergunta */
+            background-color: var(--palette2-light-bg); /* Fundo claro para os botões de pergunta */
+            color: var(--palette2-dark-green); /* Cor do texto dos botões de pergunta (Dark Green) */
             padding: 10px 12px; /* Padding ajustado */
             border-radius: 8px; /* Bordas arredondadas */
             border: none; /* Sem borda */
@@ -341,13 +429,14 @@
         }
 
         .topic-chat-container .option-button-small:hover {
-             background-color: #ccc; /* Cinza mais escuro no hover */
+             background-color: #e0e0e0; /* Cinza mais escuro no hover */
         }
 
-        /* Estilo para o combo de resposta */
+        /* Estilo para o combo de resposta (agora cinza) */
         .answer-combo {
-            background-color: var(--patricia-soft-jade); /* Cor de fundo para o combo de resposta - Mantido */
-            border: 1px solid #d0d0d0;
+            /* Cor de fundo alterada para cinza mais claro */
+            background-color: var(--answer-combo-gray); /* Cinza mais claro */
+            border: 1px solid var(--answer-combo-gray-border); /* Borda cinza */
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 10px;
@@ -359,13 +448,26 @@
             /* Removido max-height para permitir que o combo se expanda */
         }
 
+         /* Estilo específico para o combo do livro (cinza claro) - Mantido, mas a cor base agora é cinza */
+         .answer-combo.book-combo {
+             background-color: var(--combo-light-gray); /* Cinza Claro */
+             border-color: #cccccc; /* Borda cinza */
+         }
+
+         /* Estilo específico para o combo de agenda (bege claro) - Mantido, mas a cor base agora é cinza */
+         .answer-combo.agenda-combo {
+             background-color: var(--agenda-combo-bg); /* Bege Claro */
+             border-color: #cccccc; /* Borda cinza */
+         }
+
+
         .answer-combo .question-text {
             font-weight: 600;
-            color: var(--patricia-smoky-khaki); /* Cor da pergunta no combo */
+            color: var(--palette2-black); /* Cor da pergunta no combo PRETO */
         }
 
         .answer-combo .answer-text {
-            color: var(--patricia-text); /* Cor da resposta no combo */
+            color: var(--palette2-black); /* Cor da resposta no combo PRETO */
             /* Removido overflow-y e max-height */
         }
 
@@ -375,7 +477,7 @@
             align-items: center;
             margin-top: 15px; /* Espaço acima do rodapé do combo */
             padding-top: 10px;
-            border-top: 1px solid #eee; /* Separador */
+            border-top: 1px solid #ccc; /* Separador cinza */
         }
 
         .answer-combo .button-group {
@@ -391,8 +493,8 @@
         }
 
         .answer-combo .close-chat-btn-inline {
-            background-color: #ffffff; /* Fundo branco */
-            color: var(--patricia-text); /* Cor do texto */
+            background-color: var(--palette2-light-bg); /* Fundo branco */
+            color: var(--palette2-dark-green); /* Cor do texto (Dark Green) */
             padding: 5px 10px; /* Padding menor para botão pequeno */
             border-radius: 5px;
             border: 1px solid #ccc; /* Borda sutil para botões brancos */
@@ -407,18 +509,19 @@
         }
 
         .answer-combo .close-chat-btn-inline:hover {
-             background-color: #f0f0f0; /* Cinza muito claro no hover */
+             background-color: #e0e0e0; /* Cinza muito claro no hover */
              border-color: #b3b3b3; /* Borda mais escura no hover */
         }
 
+        /* Estilo para o ícone do WhatsApp no rodapé dos combos (agora cinza, exceto no flutuante e botão principal) */
         .answer-combo .whatsapp-icon-link-combo {
-             color: var(--whatsapp-green); /* Cor Verde para o ícone WhatsApp no combo */
-             font-size: 2rem; /* Tamanho do ícone */
+             color: var(--whatsapp-combo-gray); /* Cor Cinza para o ícone WhatsApp no combo */
+             font-size: 1.5rem; /* Tamanho do ícone REDUZIDO */
              transition: color 0.3s ease;
         }
 
          .answer-combo .whatsapp-icon-link-combo:hover {
-             color: var(--whatsapp-green-darker); /* Cor Verde mais escura no hover */
+             color: var(--whatsapp-combo-gray-darker); /* Cor Cinza mais escura no hover */
          }
 
 
@@ -451,20 +554,20 @@
 
          /* Estilo para o Cartão de Visita Eletrônico dentro do chat */
         .business-card {
-            background-color: var(--patricia-sandstone); /* Fundo claro para o cartão */
+            background-color: var(--palette2-light-bg); /* Fundo claro para o cartão */
             border: 1px solid #d0d0d0;
             border-radius: 8px;
             padding: 15px;
             margin-top: 10px;
             text-align: center;
-            color: var(--patricia-text);
+            color: var(--palette2-dark-green); /* Texto do cartão (Dark Green) */
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .business-card h4 {
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--patricia-smoky-khaki);
+            color: var(--palette2-dark-green); /* Cor do título do cartão (Dark Green) */
         }
 
         .business-card p {
@@ -473,15 +576,75 @@
         }
 
         .business-card a {
-            color: var(--patricia-vintage-seagrass); /* Cor de link */
+            color: var(--palette2-medium-brown); /* Cor de link (Marrom/Laranja Médio) */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .business-card a:hover {
-            color: #76968c; /* Cor de link no hover */
+            color: #a47035; /* Cor de link no hover (Marrom/Laranja Médio mais escuro) */
             text-decoration: underline;
+        }
+
+        /* Estilo para o rodapé */
+        footer {
+            background-color: transparent; /* Fundo transparente */
+            color: var(--palette2-light-green); /* Cor do texto do rodapé (Verde Claro) */
+            padding: 20px 0; /* Padding ajustado */
+            text-align: center;
+            width: 100%;
+            margin-top: auto; /* Empurra o rodapé para baixo */
+        }
+         footer p {
+             font-size: 0.9rem; /* Tamanho da fonte do texto do rodapé */
+         }
+
+         /* Estilos para o formulário de agendamento */
+        .agenda-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Espaço entre os campos */
+            margin-top: 10px;
+        }
+
+        .agenda-form label {
+            font-weight: 600;
+            color: var(--palette2-dark-green); /* Cor do label (Dark Green) */
+            font-size: 0.9rem;
+        }
+
+        .agenda-form input[type="text"],
+        .agenda-form input[type="email"],
+        .agenda-form input[type="date"],
+        .agenda-form select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: var(--palette2-black); /* Cor do texto do input PRETO */
+            background-color: var(--palette2-light-bg); /* Fundo claro para inputs */
+            width: 100%; /* Ocupa a largura total */
+            box-sizing: border-box; /* Inclui padding na largura */
+        }
+
+        .agenda-form button[type="submit"] {
+            /* Alterado para a nova cor laranja mais escura */
+            background-color: var(--send-button-orange); /* Botão Enviar Laranja Escuro */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .agenda-form button[type="submit"]:hover {
+             /* Alterado para a nova cor laranja mais escura no hover */
+             background-color: var(--send-button-orange-darker); /* Laranja mais escura no hover */
         }
 
 
@@ -524,10 +687,10 @@
                  right: 15px;
              }
              .floating-icon-linktree {
-                 width: 75px; /* Ajustado para mobile */
-                 height: 75px; /* Ajustado para mobile */
-                 font-size: 3.5rem; /* Ajustado para mobile */
-                 margin-bottom: 12px; /* Ajustado para mobile */
+                 width: 45px; /* Ajustado para mobile REDUZIDO */
+                 height: 45px; /* Ajustado para mobile REDUZIDO */
+                 font-size: 1.8rem; /* Ajustado para mobile REDUZIDO */
+                 margin-bottom: 6px; /* Espaço entre os ícones REDUZIDO */
              }
              .topic-chat-container {
                  padding: 10px;
@@ -551,9 +714,6 @@
                    margin-bottom: 0; /* Remove margem inferior */
                    flex-wrap: nowrap; /* Evita quebra de linha para o botão único */
                }
-               .answer-combo .back-to-questions-btn {
-                   display: none; /* Continua escondido */
-               }
                .answer-combo .close-chat-btn-inline {
                    width: auto; /* Largura automática */
                    font-size: 0.8rem; /* Mantém fonte pequena */
@@ -571,14 +731,14 @@
         <div class="container linktree-container">
             <img src="https://media.licdn.com/dms/image/v2/C4D03AQHoy6HE90-9cg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517058550993?e=1753315200&v=beta&t=CEjGdRw5vohgyYlXYgRTlTC5nh7YD8nlrXwpB2CzB5o" alt="Foto de Patrícia Paiva" class="profile-img mx-auto">
 
-            <h1 class="text-patricia-heading">
+            <h1 class="text-palette2-dark-green">
                 Patrícia Paiva
             </h1>
-            <p class="description text-patricia-subheading">
+            <p class="description text-palette2-dark-green">
                 Psicóloga Clínica, Hipnoterapeuta e Escritora
             </p>
 
-            <button class="btn-option" data-topic="quem-sou"><i class="fas fa-info-circle"></i> Quem Sou</button>
+            <button class="btn-option quem-sou" data-topic="quem-sou"><i class="fas fa-info-circle"></i> Quem Sou</button>
             <div class="topic-chat-container" id="chat-quem-sou">
                 <div class="chat-header">
                     <span>Sobre Patrícia Paiva</span>
@@ -593,10 +753,19 @@
                 </div>
                  </div>
 
-            <a href="https://wa.me/559884574134" target="_blank" class="btn-option whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp para Contato</a>
-            <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank" class="btn-option instagram-button"><i class="fab fa-instagram"></i> Siga no Instagram</a>
+             <button class="btn-option marcar-agenda" data-topic="marcar-agenda"><i class="fas fa-calendar-alt"></i> Marcar Consulta</button>
+             <div class="topic-chat-container" id="chat-marcar-agenda">
+                 <div class="chat-header">
+                     <span>Marcar Consulta</span>
+                     <button class="chat-close-btn">&times;</button>
+                 </div>
+                 <div class="chat-body">
+                     </div>
+                 <div class="chat-options hidden">
+                     </div>
+             </div>
 
-            <button class="btn-option" data-topic="terapia"><i class="fas fa-user"></i> Terapia Individual</button>
+            <button class="btn-option terapia" data-topic="terapia"><i class="fas fa-user"></i> Terapia Individual</button>
             <div class="topic-chat-container" id="chat-terapia">
                 <div class="chat-header">
                     <span>Sobre Terapia Individual</span>
@@ -616,7 +785,7 @@
                 </div>
                  </div>
 
-            <button class="btn-option" data-topic="hipnoterapia"><i class="fas fa-brain"></i> Descubra a Hipnoterapia</button>
+            <button class="btn-option hipnoterapia" data-topic="hipnoterapia"><i class="fas fa-brain"></i> Descubra a Hipnoterapia</button>
              <div class="topic-chat-container" id="chat-hipnoterapia">
                 <div class="chat-header">
                     <span>Sobre Hipnoterapia</span>
@@ -636,7 +805,7 @@
                 </div>
                  </div>
 
-            <button class="btn-option" data-topic="porte-armas"><i class="fas fa-shield-alt"></i> Convênio Polícia Federal</button>
+            <button class="btn-option porte-armas" data-topic="porte-armas"><i class="fas fa-shield-alt"></i> Convênio Polícia Federal</button>
              <div class="topic-chat-container" id="chat-porte-armas">
                 <div class="chat-header">
                     <span>Sobre Convênio Polícia Federal</span>
@@ -656,7 +825,7 @@
                 </div>
                  </div>
 
-            <button class="btn-option" data-topic="saude-mental"><i class="fas fa-heart"></i> Saúde Mental e Bem-Estar</button>
+            <button class="btn-option saude-mental" data-topic="saude-mental"><i class="fas fa-heart"></i> Saúde Mental e Bem-Estar</button>
              <div class="topic-chat-container" id="chat-saude-mental">
                 <div class="chat-header">
                     <span>Sobre Saúde Mental e Bem-Estar</span>
@@ -676,7 +845,7 @@
                 </div>
                  </div>
 
-             <button class="btn-option" data-topic="espiritualidade"><i class="fas fa-leaf"></i> Espiritualidade e Saúde</button>
+             <button class="btn-option espiritualidade" data-topic="espiritualidade"><i class="fas fa-leaf"></i> Espiritualidade e Saúde</button>
              <div class="topic-chat-container" id="chat-espiritualidade">
                 <div class="chat-header">
                     <span>Sobre Espiritualidade e Saúde</span>
@@ -722,25 +891,23 @@
                      </div>
             </div>
 
+
         </div> </section>
 
-    <footer class="bg-patricia-dark-blue py-6 text-white text-center">
+    <footer class="bg-palette2-dark-green py-6 text-white text-center">
         <div class="container">
             <p>&copy; 2024 Patrícia Paiva. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <div class="floating-icons-linktree">
-        <a href="https://wa.me/559884574134" target="_blank" class="floating-icon whatsapp-float-linktree">
+        <a href="https://wa.me/559884574134" target="_blank" class="floating-icon-linktree whatsapp-float-linktree">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank" class="floating-icon instagram-float-linktree">
+        <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank" class="floating-icon-linktree instagram-float-linktree">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="mailto:seuemail@example.com" class="floating-icon email-float-linktree">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
+        </div>
 
 
     <script>
@@ -750,24 +917,55 @@
         const emailAddress = 'seuemail@example.com'; // Endereço de Email da Patrícia
         const linkedinUrl = 'https://www.linkedin.com/in/patr%C3%ADcia-paiva-5b3b65144/'; // URL do LinkedIn da Patrícia
 
-        // Conteúdo dos chats por tópico (ajustado para 8 perguntas)
+        // Conteúdo dos chats por tópico (ajustado para 8 perguntas + Agendamento)
         const topicContent = {
             "quem-sou": { // Novo tópico Quem Sou
                 title: "Sobre Patrícia Paiva",
                 questions: [
                     { q: "Minha Bio", a: "Acredito no cuidado integral do ser humano — mente, corpo e espírito. Com base na Psicologia, na saúde mental e na espiritualidade, ajudo pessoas a se reconectarem consigo mesmas, encontrando equilíbrio, propósito e leveza para viver com mais sentido." },
-                    { q: "Formação e Experiência", a: `Sou Psicóloga Clínica, Hipnoterapeuta e Escritora. Tenho experiência em [Mencione áreas de experiência relevantes]. Você pode ver meu perfil completo no LinkedIn: <a href="${linkedinUrl}" target="_blank" style="color: var(--patricia-vintage-seagrass); text-decoration: underline; font-weight: 600;">Perfil LinkedIn</a>` }, // Adicionado link do LinkedIn aqui
+                    { q: "Formação e Experiência", a: `Sou Psicóloga Clínica, Hipnoterapeuta e Escritora. Tenho experiência em [Mencione áreas de experiência relevantes]. Você pode ver meu perfil completo no LinkedIn: <a href="${linkedinUrl}" target="_blank" style="color: var(--palette2-medium-brown); text-decoration: underline; font-weight: 600;">Perfil LinkedIn</a>` }, // Adicionado link do LinkedIn aqui
                     { q: "Cartão de Visita Eletrônico", a: `
                         <div class="business-card">
                             <h4>Patrícia Paiva</h4>
                             <p>Psicóloga Clínica | Hipnoterapeuta | Escritora</p>
                             <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/${whatsappNumber}" target="_blank">${whatsappNumber}</a></p>
                             <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank">@patricia.paiva.391</a></p>
-                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:${emailAddress}">${emailAddress}</a></p>
+                            <p><i class="fab fa-whatsapp"></i> Contato WhatsApp: <a href="https://wa.me/${whatsappNumber}" target="_blank">${whatsappNumber}</a></p>
                             <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="${linkedinUrl}" target="_blank">Perfil LinkedIn</a></p> </div>
-                    `}, // Cartão de Visita Eletrônico em HTML
+                    `}, // Cartão de Visita Eletrônico em HTML - EMAIL ALTERADO PARA WHATSAPP
                 ]
             },
+            "marcar-agenda": { // Tópico Marcar Agenda (agora Marcar Consulta)
+                 title: "Marcar Consulta",
+                 form: `
+                     <form class="agenda-form" id="agendaForm">
+                         <p style="color: var(--palette2-dark-green); font-size: 0.95rem; margin-bottom: 15px;">Preencha os dados abaixo para solicitar um agendamento:</p>
+                         <div>
+                             <label for="nome">Nome:</label>
+                             <input type="text" id="nome" name="nome" required>
+                         </div>
+                         <div>
+                             <label for="whatsapp">Contato WhatsApp:</label>
+                             <input type="text" id="whatsapp" name="whatsapp" required>
+                         </div>
+                         <div>
+                             <label for="data">Data Preferencial:</label>
+                             <input type="date" id="data" name="data" required>
+                         </div>
+                         <div>
+                             <label for="hora">Hora Preferencial (18:00 às 22:00):</label>
+                             <select id="hora" name="hora" required>
+                                 <option value="">Selecione um horário</option>
+                                 <option value="18:00">18:00</option>
+                                 <option value="19:00">19:00</option>
+                                 <option value="20:00">20:00</option>
+                                 <option value="21:00">21:00</option>
+                             </select>
+                         </div>
+                         <button type="submit">Enviar Solicitação</button>
+                     </form>
+                 `
+             },
             "terapia": {
                 title: "Sobre Terapia Individual", // Título atualizado
                 questions: [
@@ -864,6 +1062,17 @@
                     if (container.id !== `chat-${topic}`) {
                         container.style.display = 'none';
                          container.classList.remove('active'); // Remover classe active
+                         // Resetar estado do chat ao fechar
+                         const chatBodyToReset = container.querySelector('.chat-body');
+                         const chatOptionsToReset = container.querySelector('.chat-options');
+                         if(chatBodyToReset) {
+                             chatBodyToReset.innerHTML = '';
+                             chatBodyToReset.classList.remove('combo-active');
+                             chatBodyToReset.classList.remove('agenda-form-active');
+                         }
+                         if(chatOptionsToReset) {
+                            chatOptionsToReset.classList.remove('hidden');
+                         }
                     }
                 });
 
@@ -873,96 +1082,176 @@
                     const chatOptions = targetChatContainer.querySelector('.chat-options');
                     const chatCloseBtn = targetChatContainer.querySelector('.chat-close-btn');
 
-                    // Preencher o chat do tópico
-                    chatHeader.textContent = content.title;
-                    chatBody.innerHTML = ''; // Limpar mensagens e combos anteriores
+                    // Limpar mensagens e combos anteriores
+                    chatBody.innerHTML = '';
                     chatOptions.innerHTML = ''; // Limpar opções anteriores
 
-                    content.questions.forEach((item, index) => {
-                        const questionButton = document.createElement('button');
-                        questionButton.classList.add('option-button-small');
-                        questionButton.textContent = item.q;
-                        questionButton.dataset.questionIndex = index; // Armazena o índice da pergunta
-                        chatOptions.appendChild(questionButton);
+                    // Preencher o chat do tópico
+                    chatHeader.textContent = content.title;
 
-                        // Adicionar listener para as perguntas dentro deste chat
-                        questionButton.addEventListener('click', function() {
-                            const qIndex = this.dataset.questionIndex;
-                            const userQ = this.textContent;
-                            const botA = content.questions[qIndex].a;
+                    if (content.form) {
+                        // Se o tópico tem um formulário, exibe o formulário
+                        chatBody.innerHTML = content.form;
+                        chatOptions.classList.add('hidden'); // Esconde as opções quando há formulário
+                        chatBody.classList.add('agenda-form-active'); // Adiciona classe para remover scroll
 
-                            // Esconder as opções de pergunta
-                            chatOptions.classList.add('hidden');
-                            chatBody.innerHTML = ''; // Limpar o corpo antes de adicionar o novo combo
+                        // Adicionar listener para o formulário de agendamento
+                        const agendaForm = targetChatContainer.querySelector('#agendaForm');
+                        if (agendaForm) {
+                            agendaForm.addEventListener('submit', function(event) {
+                                event.preventDefault(); // Previne o envio padrão do formulário
 
-                            // Criar o novo combo de resposta
-                            const answerCombo = document.createElement('div');
-                            answerCombo.classList.add('answer-combo');
+                                const nome = document.getElementById('nome').value;
+                                // Alterado para pegar o valor do campo WhatsApp
+                                const whatsappContato = document.getElementById('whatsapp').value;
+                                const data = document.getElementById('data').value;
+                                const hora = document.getElementById('hora').value;
 
-                            const questionText = document.createElement('p');
-                            questionText.classList.add('question-text');
-                            questionText.textContent = userQ;
-                            answerCombo.appendChild(questionText);
+                                // Simula o envio de email (substituir por lógica real de envio)
+                                const subject = `Solicitação de Agendamento - ${nome}`;
+                                // Alterado para incluir o contato WhatsApp
+                                const body = `Nome: ${nome}\nContato WhatsApp: ${whatsappContato}\nData Preferencial: ${data}\nHora Preferencial: ${hora}`;
 
-                            const answerText = document.createElement('div'); // Usar div para permitir HTML
-                            answerText.classList.add('answer-text');
-                            answerText.innerHTML = botA; // Resposta pode conter HTML (como o cartão de visita)
-                            answerCombo.appendChild(answerText);
+                                // Exemplo simples: exibe os dados no console e uma mensagem de sucesso
+                                console.log("Dados do Agendamento:", { nome, whatsappContato, data, hora });
+                                console.log("Assunto do Email:", subject);
+                                console.log("Corpo do Email:", body);
 
-                            // Rodapé do combo com botões e WhatsApp
-                            const comboFooter = document.createElement('div');
-                            comboFooter.classList.add('combo-footer');
+                                // Adiciona uma mensagem de sucesso no chat
+                                const successMessage = document.createElement('div');
+                                successMessage.classList.add('message', 'bot');
+                                successMessage.innerHTML = `Obrigado(a), ${nome}! Sua solicitação de agendamento para ${data} às ${hora} foi enviada. Entrarei em contato em breve pelo WhatsApp.`;
+                                chatBody.innerHTML = ''; // Limpa o formulário
+                                chatBody.appendChild(successMessage);
 
-                            const buttonGroup = document.createElement('div');
-                            buttonGroup.classList.add('button-group');
+                                 // Adiciona um botão "Voltar" após o envio
+                                const backButtonAfterSubmit = document.createElement('button');
+                                backButtonAfterSubmit.classList.add('close-chat-btn-inline');
+                                backButtonAfterSubmit.textContent = 'Voltar';
+                                backButtonAfterSubmit.style.marginTop = '15px'; // Espaço acima do botão
+                                chatBody.appendChild(backButtonAfterSubmit);
 
-                            // Botão Voltar que agora fecha o chat
-                            const closeChatButton = document.createElement('button');
-                            closeChatButton.classList.add('close-chat-btn-inline');
-                            closeChatButton.textContent = 'Voltar'; // Botão Voltar para fechar o chat
-                            buttonGroup.appendChild(closeChatButton);
+                                backButtonAfterSubmit.addEventListener('click', function() {
+                                     targetChatContainer.style.display = 'none';
+                                     targetChatContainer.classList.remove('active');
+                                     chatOptions.classList.remove('hidden');
+                                     chatBody.innerHTML = '';
+                                     chatBody.classList.remove('combo-active');
+                                     chatBody.classList.remove('agenda-form-active'); // Remover classe
+                                });
 
-                            comboFooter.appendChild(buttonGroup); // Adicionar o grupo de botões ao rodapé do combo
+                                chatBody.classList.add('combo-active'); // Adicionar classe para remover scroll se necessário
+                                chatBody.scrollTop = chatBody.scrollHeight; // Rolar para a mensagem de sucesso
 
-                            const whatsappLinkCombo = document.createElement('a');
-                            whatsappLinkCombo.href = `https://wa.me/${whatsappNumber}`;
-                            whatsappLinkCombo.target = '_blank';
-                            whatsappLinkCombo.classList.add('whatsapp-icon-link-combo');
-                            whatsappLinkCombo.innerHTML = '<i class="fab fa-whatsapp"></i>';
-                            comboFooter.appendChild(whatsappLinkCombo); // Adicionar o ícone do WhatsApp ao rodapé do combo
-
-
-                            answerCombo.appendChild(comboFooter); // Adicionar o rodapé ao combo de resposta
-
-                            // Adicionar listener para o novo botão Voltar (fechar chat)
-                            closeChatButton.addEventListener('click', function() {
-                                 targetChatContainer.style.display = 'none'; // Esconde o container do chat
-                                 targetChatContainer.classList.remove('active');
-                                 chatOptions.classList.remove('hidden'); // Garante que as opções não fiquem escondidas ao fechar
-                                 chatBody.innerHTML = ''; // Resetar chat
-                                 chatBody.classList.remove('combo-active'); // Remover classe para restaurar scroll
+                                // Em um ambiente real, você usaria um serviço de backend para enviar o email.
+                                // Exemplo de link mailto (limitado pelo tamanho e funcionalidade):
+                                // window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                             });
+                        }
 
-                            // Adicionar o combo de resposta ao corpo do chat
-                            chatBody.appendChild(answerCombo);
-                            chatBody.classList.add('combo-active'); // Adicionar classe para remover scroll
-                            chatBody.scrollTop = chatBody.scrollHeight; // Rolar para a nova resposta
+                    } else if (content.questions) {
+                        // Se o tópico tem perguntas, exibe as perguntas como botões
+                        chatOptions.classList.remove('hidden'); // Garante que as opções estejam visíveis
+                         chatBody.classList.remove('agenda-form-active'); // Remover classe se não for o formulário
+
+                        content.questions.forEach((item, index) => {
+                            const questionButton = document.createElement('button');
+                            questionButton.classList.add('option-button-small');
+                            questionButton.textContent = item.q;
+                            questionButton.dataset.questionIndex = index; // Armazena o índice da pergunta
+                            chatOptions.appendChild(questionButton);
+
+                            // Adicionar listener para as perguntas dentro deste chat
+                            questionButton.addEventListener('click', function() {
+                                const qIndex = this.dataset.questionIndex;
+                                const userQ = this.textContent;
+                                const botA = content.questions[qIndex].a;
+
+                                // Esconder as opções de pergunta
+                                chatOptions.classList.add('hidden');
+                                chatBody.innerHTML = ''; // Limpar o corpo antes de adicionar o novo combo
+
+                                // Criar o novo combo de resposta
+                                const answerCombo = document.createElement('div');
+                                answerCombo.classList.add('answer-combo');
+
+                                // Adiciona classe específica para o combo do livro se for o caso
+                                if (topic === 'girassois-vida') {
+                                     answerCombo.classList.add('book-combo');
+                                } else if (topic === 'marcar-agenda') {
+                                     answerCombo.classList.add('agenda-combo'); // Adiciona classe para o combo de agenda
+                                }
+
+
+                                const questionText = document.createElement('p');
+                                questionText.classList.add('question-text');
+                                questionText.textContent = userQ;
+                                answerCombo.appendChild(questionText);
+
+                                const answerText = document.createElement('div'); // Usar div para permitir HTML
+                                answerText.classList.add('answer-text');
+                                answerText.innerHTML = botA; // Resposta pode conter HTML (como o cartão de visita)
+                                answerCombo.appendChild(answerText);
+
+                                // Rodapé do combo com botões e WhatsApp
+                                const comboFooter = document.createElement('div');
+                                comboFooter.classList.add('combo-footer');
+
+                                const buttonGroup = document.createElement('div');
+                                buttonGroup.classList.add('button-group');
+
+                                // Botão Voltar que agora fecha o chat
+                                const closeChatButton = document.createElement('button');
+                                closeChatButton.classList.add('close-chat-btn-inline');
+                                closeChatButton.textContent = 'Voltar'; // Botão Voltar para fechar o chat
+                                buttonGroup.appendChild(closeChatButton);
+
+                                comboFooter.appendChild(buttonGroup); // Adicionar o grupo de botões ao rodapé do combo
+
+                                const whatsappLinkCombo = document.createElement('a');
+                                whatsappLinkCombo.href = `https://wa.me/${whatsappNumber}`;
+                                whatsappLinkCombo.target = '_blank';
+                                // Usa a nova classe para o ícone do WhatsApp nos combos (agora cinza)
+                                whatsappLinkCombo.classList.add('whatsapp-icon-link-combo');
+                                whatsappLinkCombo.innerHTML = '<i class="fab fa-whatsapp"></i>';
+                                comboFooter.appendChild(whatsappLinkCombo); // Adicionar o ícone do WhatsApp ao rodapé do combo
+
+
+                                answerCombo.appendChild(comboFooter); // Adicionar o rodapé ao combo de resposta
+
+                                // Adicionar listener para o novo botão Voltar (fechar chat)
+                                closeChatButton.addEventListener('click', function() {
+                                     targetChatContainer.style.display = 'none'; // Esconde o container do chat
+                                     targetChatContainer.classList.remove('active');
+                                     chatOptions.classList.remove('hidden'); // Garante que as opções não fiquem escondidas ao fechar
+                                     chatBody.innerHTML = ''; // Resetar chat
+                                     chatBody.classList.remove('combo-active'); // Remover classe para restaurar scroll
+                                     chatBody.classList.remove('agenda-form-active'); // Remover classe
+                                });
+
+                                // Adicionar o combo de resposta ao corpo do chat
+                                chatBody.appendChild(answerCombo);
+                                chatBody.classList.add('combo-active'); // Adicionar classe para remover scroll
+                                chatBody.scrollTop = chatBody.scrollHeight; // Rolar para a nova resposta
+                            });
                         });
-                    });
+                    }
+
 
                     // Alternar a visibilidade do chat clicado
                     if (targetChatContainer.style.display === 'none' || targetChatContainer.style.display === '') {
                         targetChatContainer.style.display = 'flex'; // Usar flex para layout interno
                          targetChatContainer.classList.add('active'); // Adicionar classe active
-                         chatOptions.classList.remove('hidden'); // Garante que as opções estejam visíveis ao abrir
-                         chatBody.innerHTML = ''; // Limpar o corpo ao abrir um novo chat
-                         chatBody.classList.remove('combo-active'); // Remover classe ao abrir para garantir scroll inicial
+                         // chatOptions.classList.remove('hidden'); // Garante que as opções estejam visíveis ao abrir (já tratado acima)
+                         // chatBody.innerHTML = ''; // Limpar o corpo ao abrir um novo chat (já tratado acima)
+                         // chatBody.classList.remove('combo-active'); // Remover classe ao abrir para garantir scroll inicial (já tratado acima)
                     } else {
                         targetChatContainer.style.display = 'none';
                          targetChatContainer.classList.remove('active'); // Remover classe active
                          chatOptions.classList.remove('hidden'); // Garante que as opções não fiquem escondidas ao fechar
                          chatBody.innerHTML = ''; // Resetar chat
                          chatBody.classList.remove('combo-active'); // Remover classe ao fechar
+                         chatBody.classList.remove('agenda-form-active'); // Remover classe
                     }
 
                     // Adicionar listener para o botão fechar deste chat específico
@@ -972,6 +1261,7 @@
                          chatOptions.classList.remove('hidden'); // Garante que as opções não fiquem escondidas ao fechar
                          chatBody.innerHTML = ''; // Resetar chat
                          chatBody.classList.remove('combo-active'); // Remover classe ao fechar
+                         chatBody.classList.remove('agenda-form-active'); // Remover classe
                     }
                 }
             });
@@ -999,6 +1289,7 @@
                       if(chatBody) {
                           chatBody.innerHTML = ''; // Resetar chat
                           chatBody.classList.remove('combo-active'); // Remover classe
+                          chatBody.classList.remove('agenda-form-active'); // Remover classe
                       }
                  }
              });
