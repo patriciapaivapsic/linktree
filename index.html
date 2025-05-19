@@ -56,6 +56,9 @@
                          /* Cor sólida marrom para o botão de envio do formulário de agendamento (mantido para referência, mas não usado no botão Enviar) */
                          'ral-8008-olive-brown': '#6B4620', /* Cor RAL 8008 Olive Brown */
                          'ral-8008-olive-brown-darker': '#52371a', /* Tom mais escuro para hover */
+
+                         /* Nova cor verde claro para o campo de WhatsApp no formulário de agendamento */
+                         'whatsapp-field-green': '#8B9C7E', /* Usando o Light Green da paleta */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'], // Fonte principal Inter
@@ -133,6 +136,9 @@
              --ral-8008-olive-brown: #6B4620; /* Cor RAL 8008 Olive Brown */
              --ral-8008-olive-brown-darker: #52371a; /* Tom mais escuro para hover */
 
+             /* Nova cor verde claro para o campo de WhatsApp no formulário de agendamento */
+             --whatsapp-field-green: #8B9C7E; /* Usando o Light Green da paleta */
+
          }
 
 
@@ -202,7 +208,7 @@
         .btn-option.quem-sou,
         .btn-option.terapia,
         .btn-option.hipnoterapia,
-        .btn-option.porte-armas,
+        /* .btn-option.porte-armas, REMOVIDO */
         .btn-option.saude-mental,
         .btn-option.espiritualidade {
              background: var(--gradient-green-base);
@@ -210,7 +216,7 @@
         .btn-option.quem-sou:hover,
         .btn-option.terapia:hover,
         .btn-option.hipnoterapia:hover,
-        .btn-option.porte-armas:hover,
+        /* .btn-option.porte-armas:hover, REMOVIDO */
         .btn-option.saude-mental:hover,
         .btn-option.espiritualidade:hover {
              background: var(--gradient-green-hover);
@@ -631,7 +637,8 @@
             border-radius: 5px;
             font-size: 0.9rem;
             color: var(--palette2-black); /* Cor do texto do input PRETO */
-            background-color: var(--palette2-light-bg); /* Fundo claro para inputs */
+            /* Usando a nova variável para o fundo do campo WhatsApp */
+            background-color: var(--whatsapp-field-green); /* Verde claro para inputs */
             width: 100%; /* Ocupa a largura total */
             box-sizing: border-box; /* Inclui padding na largura */
         }
@@ -812,26 +819,6 @@
                 </div>
                  </div>
 
-            <button class="btn-option porte-armas" data-topic="porte-armas"><i class="fas fa-shield-alt"></i> Convênio Polícia Federal</button>
-             <div class="topic-chat-container" id="chat-porte-armas">
-                <div class="chat-header">
-                    <span>Sobre Convênio Polícia Federal</span>
-                    <button class="chat-close-btn">&times;</button>
-                </div>
-                <div class="chat-body">
-                     </div>
-                <div class="chat-options">
-                     <button class="option-button-small" data-question-index="0">Como funciona o processo de avaliação psicológica para porte de arma?</button>
-                     <button class="option-button-small" data-question-index="1">Quais documentos são necessários para a avaliação?</button>
-                     <button class="option-button-small" data-question-index="2">Qual o custo da avaliação?</button>
-                     <button class="option-button-small" data-question-index="3">Quanto tempo leva para receber o resultado da avaliação?</button>
-                     <button class="option-button-small" data-question-index="4">A avaliação garante a aprovação para o porte de arma?</button>
-                     <button class="option-button-small" data-question-index="5">Em quais casos a avaliação pode resultar em inaptidão?</button>
-                     <button class="option-button-small" data-question-index="6">Posso fazer a avaliação mesmo sem ter experiência prévia com armas?</button>
-                     <button class="option-button-small" data-question-index="7">Como agendar a avaliação psicológica?</button>
-                </div>
-                 </div>
-
             <button class="btn-option saude-mental" data-topic="saude-mental"><i class="fas fa-heart"></i> Saúde Mental e Bem-Estar</button>
              <div class="topic-chat-container" id="chat-saude-mental">
                 <div class="chat-header">
@@ -999,8 +986,9 @@
                     { q: "Como a hipnoterapia acessa o subconsciente?", a: "Ao relaxar a mente consciente, a hipnose facilita o acesso a padrões de pensamento e emoções armazenados no subconsciente, permitindo ressignificação." }
                 ]
             },
+            /* REMOVIDO: Conteúdo do chat de Convênio Polícia Federal
             "porte-armas": {
-                 title: "Sobre Convênio Polícia Federal", // Título atualizado
+                 title: "Sobre Convênio Polícia Federal",
                  questions: [
                      { q: "Como funciona o processo de avaliação psicológica para porte de arma?", a: "É uma avaliação que verifica se o indivíduo possui as condições psicológicas adequadas para manusear uma arma de fogo de forma segura e responsável, seguindo as normas da Polícia Federal." },
                      { q: "Quais documentos são necessários para a avaliação?", a: "Você precisará apresentar documentos de identificação e, possivelmente, outros específicos solicitados pela Polícia Federal. Confirme os requisitos ao agendar." },
@@ -1012,6 +1000,7 @@
                      { q: "Como agendar a avaliação psicológica para porte de arma?", a: "Você pode agendar sua avaliação diretamente entrando em contato via WhatsApp." }
                  ]
             },
+            */
             "saude-mental": {
                  title: "Sobre Saúde Mental e Bem-Estar", // Título atualizado
                  questions: [
