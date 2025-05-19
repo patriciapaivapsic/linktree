@@ -22,7 +22,8 @@
                         // Cores para ícones flutuantes (mantidas ou ajustadas se necessário)
                          'whatsapp-float': '#25D366', // Mantido o verde WhatsApp padrão para reconhecimento
                          'instagram-float': '#A66C8F', // Mantido o tom de rosa/roxo
-                         'email-float': '#777', // Mantido o cinza
+                         'email-float': '#777', // Cor cinza para Email flutuante
+                         'linkedin-float': '#0e76a8', /* Cor para LinkedIn flutuante */
 
                          // Cores para botões específicos (ajustadas para a nova paleta)
                          'whatsapp-button-color': '#25D366', // Mantido o verde WhatsApp
@@ -101,6 +102,7 @@
             --whatsapp-green-darker: #128751; /* Verde mais escuro para hover */
             --instagram-color: #A66C8F; /* Cor Instagram (mantida) */
              --email-float-color: #777; /* Cor cinza para Email flutuante */
+             --linkedin-float-color: #0e76a8; /* Cor para LinkedIn flutuante */
 
              /* Variáveis para o botão do livro (tons de verde) */
              --book-button-green: #4A5D42; /* Usando o Dark Green da paleta */
@@ -204,7 +206,7 @@
              font-size: 1.3rem; /* Tamanho do ícone ajustado */
          }
 
-        /* Estilos com Gradiente Verde para TODOS os botões principais */
+        /* Estilos com Gradiente Verde para TODOS os botões principais (exceto Agendar, Escritora, WhatsApp, Instagram) */
         .btn-option.quem-sou,
         .btn-option.terapia,
         .btn-option.hipnoterapia,
@@ -331,6 +333,10 @@
             background-color: var(--email-float-color); /* Cor cinza para Email flutuante */
             color: white; /* Cor do ícone branca */
         }
+         .linkedin-float-linktree {
+             background-color: var(--linkedin-float-color); /* Cor para LinkedIn flutuante */
+             color: white; /* Cor do ícone branca */
+         }
 
 
         /* Estilos para o Chat por Tópico Expansível */
@@ -901,6 +907,9 @@
         <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank" class="floating-icon-linktree instagram-float-linktree">
             <i class="fab fa-instagram"></i>
         </a>
+         <a href="mailto:patriciapaiva.pe@gmail.com" class="floating-icon-linktree email-float-linktree">
+             <i class="far fa-envelope"></i>
+         </a>
         </div>
 
 
@@ -908,7 +917,7 @@
         const topicButtons = document.querySelectorAll('.btn-option[data-topic]');
         const topicChatContainers = document.querySelectorAll('.topic-chat-container');
         const whatsappNumber = '559884574134'; // Número de WhatsApp da Patrícia
-        const emailAddress = 'seuemail@example.com'; // Endereço de Email da Patrícia
+        const emailAddress = 'patriciapaiva.pe@gmail.com'; // Endereço de Email da Patrícia
         const linkedinUrl = 'https://www.linkedin.com/in/patr%C3%ADcia-paiva-5b3b65144/'; // URL do LinkedIn da Patrícia
 
         // Conteúdo dos chats por tópico (ajustado para 8 perguntas + Agendamento)
@@ -922,9 +931,9 @@
                         <div class="business-card">
                             <h4>Patrícia Paiva</h4>
                             <p>Psicóloga Clínica | Hipnoterapeuta | Escritora</p>
-                            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/${whatsappNumber}" target="_blank">${whatsappNumber}</a></p>
+                            <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/${whatsappNumber}" target="_blank">${whatsappNumber}</a></p>
                             <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/patricia.paiva.391/" target="_blank">@patricia.paiva.391</a></p>
-                            <p><i class="fab fa-whatsapp"></i> Contato WhatsApp: <a href="https://wa.me/${whatsappNumber}" target="_blank">${whatsappNumber}</a></p>
+                             <p><i class="far fa-envelope"></i> Email: <a href="mailto:${emailAddress}">${emailAddress}</a></p>
                             <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="${linkedinUrl}" target="_blank">Perfil LinkedIn</a></p> </div>
                     `}, // Cartão de Visita Eletrônico em HTML - EMAIL ALTERADO PARA WHATSAPP
                 ]
